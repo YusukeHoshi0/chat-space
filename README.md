@@ -9,9 +9,9 @@
 |password|string|null: false|
 
 ### Association
-- has_many :users_groups, dependent: :destroy
+- has_many :users_groups
 - has_many :groups, through: :users_groups
-- has_many :messages, dependent: :destroy
+- has_many :messages
 
 
 ## groupsテーブル
@@ -21,9 +21,9 @@
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :users_groups, dependent: :destroy
+- has_many :users_groups
 - has_many :users, through: :users_groups
-- has_many :messages, dependent: :destroy
+- has_many :messages
 
 
 ## users_groupsテーブル
