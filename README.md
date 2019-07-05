@@ -13,6 +13,22 @@ Things you may want to cover:
 
 * Database creation
 
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false|
+
+### Association
+- has_many :users_groups
+- has_many :groups, through :users_groups
+- has_many :messages
+
+
+
 * Database initialization
 
 * How to run the test suite
