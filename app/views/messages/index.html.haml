@@ -6,7 +6,7 @@
           = current_user.name
         %ul.left-header__box__menu
           %li.left-header__box__menu--new-group
-            = link_to  do
+            = link_to new_group_path do
               = fa_icon 'edit', class: 'icon'
           %li.left-header__box__menu--edit-user
             = link_to edit_user_path(current_user) do
@@ -93,7 +93,7 @@
           member1,
           member2,
           member3
-      = link_to '' do
+      = link_to edit_group_path(1) do
         .header__btn--edit-group
           Edit
     .contents
