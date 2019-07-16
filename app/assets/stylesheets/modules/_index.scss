@@ -5,6 +5,10 @@
   display: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .flash-box {
   background-color: $sky-blue;
   color: white;
@@ -17,6 +21,9 @@
     background-color: #2f3e51;
     width: 300px;
     color: #ffffff;
+    & a {
+      color: white;
+    }
     .left-header {
       background-color: #253141;
       height: 100px;
@@ -36,14 +43,8 @@
             margin-left: 0.3rem;
           }
           &--new-group {
-            & a {
-              color: white;
-            }
           }
           &--edit-user {
-            & a {
-              color: white;
-            }
           }
         }
       }

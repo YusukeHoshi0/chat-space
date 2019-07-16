@@ -13,20 +13,12 @@
               = fa_icon 'cog', class: 'icon'
     .left-contents
       .left-contents__btn
-        .left-contents__btn--group-name
-          test-group
-        .left-contents__btn--last-message
-          さようなら
-      .left-contents__btn
-        .left-contents__btn--group-name
-          sample-group
-        .left-contents__btn--last-message
-          hello!
-      .left-contents__btn
-        .left-contents__btn--group-name
-          example
-        .left-contents__btn--last-message
-          まだメッセージがありません
+        - current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .left-contents__btn--group-name
+              = group.name
+            .left-contents__btn--last-message
+              メッセージがまだありません。
   .chat-main
     .header
       .header__left-box
@@ -34,65 +26,7 @@
           test-group
         .header__left-box--members
           member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
+          member2
       = link_to edit_group_path(1) do
         .header__btn--edit-group
           Edit
