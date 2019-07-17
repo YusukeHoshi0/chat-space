@@ -1,32 +1,5 @@
 .wrapper
-  .chat-side
-    .left-header
-      .left-header__box
-        .left-header__box--myname
-          = current_user.name
-        %ul.left-header__box__menu
-          %li.left-header__box__menu--new-group
-            = link_to new_group_path do
-              = fa_icon 'edit', class: 'icon'
-          %li.left-header__box__menu--edit-user
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: 'icon'
-    .left-contents
-      .left-contents__btn
-        .left-contents__btn--group-name
-          test-group
-        .left-contents__btn--last-message
-          さようなら
-      .left-contents__btn
-        .left-contents__btn--group-name
-          sample-group
-        .left-contents__btn--last-message
-          hello!
-      .left-contents__btn
-        .left-contents__btn--group-name
-          example
-        .left-contents__btn--last-message
-          まだメッセージがありません
+  = render 'shared/chat-side'
   .chat-main
     .header
       .header__left-box
@@ -34,65 +7,7 @@
           test-group
         .header__left-box--members
           member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
-          member1,
-          member2,
-          member3
+          member2
       = link_to edit_group_path(1) do
         .header__btn--edit-group
           Edit
