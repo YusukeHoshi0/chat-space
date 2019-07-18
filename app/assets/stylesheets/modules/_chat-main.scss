@@ -82,7 +82,7 @@ a {
       height: 90px;
       background-color: #ddd;
       padding: 20px 40px;
-      form {
+      & form {
         display: flex;
         .input-box {
           position: relative;
