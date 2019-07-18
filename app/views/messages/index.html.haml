@@ -2,15 +2,7 @@
   = render 'shared/chat-side'
   .chat-main
     .header
-      .header__left-box
-        .header__left-box--group-name
-          test-group
-        .header__left-box--members
-          member1,
-          member2
-      = link_to edit_group_path(1) do
-        .header__btn--edit-group
-          Edit
+      = render 'header'
     .contents
       = render @messages
     .footer

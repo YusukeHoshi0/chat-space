@@ -1,0 +1,8 @@
+.header__left-box
+  .header__left-box--group-name
+    = @group.name
+  .header__left-box--members
+    = "Member : #{@member}"
+= link_to edit_group_path(1) do
+  .header__btn--edit-group
+    Edit
