@@ -9,11 +9,15 @@ a {
   text-decoration: none;
 }
 
-.flash-box {
+.notice {
   background-color: $sky-blue;
   color: white;
   text-align: center;
 }
+// .alert {
+//   background-color: $alert_orange; 
+//   text-align: center;
+// }
 
 .wrapper {
   display: flex;
