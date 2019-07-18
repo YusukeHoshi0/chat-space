@@ -14,10 +14,10 @@ a {
   color: white;
   text-align: center;
 }
-// .alert {
-//   background-color: $alert_orange; 
-//   text-align: center;
-// }
+.alert {
+  background-color: $alert_orange; 
+  text-align: center;
+}
 
 .wrapper {
   display: flex;
@@ -39,7 +39,7 @@ a {
           color: $light_gray;
           font-size: 12px;
           white-space: nowrap;
-          margin-bottom: 15px;
+          margin-top: 15px;
         }
       }
       & a {
