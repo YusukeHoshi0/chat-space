@@ -12,63 +12,7 @@
         .header__btn--edit-group
           Edit
     .contents
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:34
-        .content--body
-          こんにちは！
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:50
-        .content--body
-          さようなら！
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:34
-        .content--body
-          こんにちは！
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:34
-        .content--body
-          こんにちは！
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:34
-        .content--body
-          こんにちは！
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:34
-        .content--body
-          こんにちは！
-      .content
-        .content__upper-info
-          .content__upper-info--user-name
-            test-user
-          .content__upper-info--date
-            2019/07/07(Sun) 19:09:34
-        .content--body
-          こんにちは！
-
+      = render @messages
     .footer
       = form_for [@group, @message] do |f|
         .input-box
