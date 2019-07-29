@@ -1,6 +1,5 @@
 $(function() {
   function buildHTML(message){
-    if (message.body && message.image) {      
       var html = `<div class="content">
                     <div class="content__upper-info">
                       <div class="content__upper-info--user-name">
@@ -12,43 +11,10 @@ $(function() {
                     </div>
                     <div class="content--body">
                       <p>${message.body}</p>
-                      <img src="${message.image}"></img>
+                      ${ message.image ? `<img src="${message.image}"></img>` :``}
                     </div>
                   </div>`
       return html;
-    }
-    else if (message.body){
-      var html = `<div class="content">
-                    <div class="content__upper-info">
-                      <div class="content__upper-info--user-name">
-                        ${message.name}
-                      </div>
-                      <div class="content__upper-info--date">
-                        ${message.date}
-                      </div>
-                    </div>
-                    <div class="content--body">
-                      <p>${message.body}</p>
-                    </div>
-                  </div>`
-      return html;
-    }
-    else if (message.image){
-      var html = `<div class="content">
-                    <div class="content__upper-info">
-                      <div class="content__upper-info--user-name">
-                        ${message.name}
-                      </div>
-                      <div class="content__upper-info--date">
-                        ${message.date}
-                      </div>
-                    </div>
-                    <div class="content--body">
-                      <img src="${message.image}"></img>
-                    </div>
-                  </div>`
-      return html;
-    }
   }
 
   
@@ -71,8 +37,7 @@ $(function() {
     .done(function(message){
       var html = buildHTML(message);
       $('.contents').append(html);
-      $('.input-box__text').val('');
-      $('.input-box__image__file').val('');
+      $('#new_message')[0].reset();
       $('.contents').animate({scrollTop: $('.contents')[0].scrollHeight });
     })
     .fail(function(){
