@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @group = Group.find(params[:group_id])
-    @users = @group.users.where('name LIKE(?)', "#{params[:keyword]}%")
+    @users = User.where('name LIKE(?)', "#{params[:keyword]}%")
   end
 
   def edit
