@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = User.where.not(id:current_user.id).where('name LIKE(?)', "#{params[:keyword]}%")
+  end
+
   def edit
   end
 
