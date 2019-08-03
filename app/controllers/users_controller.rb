@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.where.not(id:current_user.id).where('name LIKE(?)', "#{params[:keyword]}%")
+    if params[:keyword].length == 0
+      @users = []
+    else
+      @users = User.where.not(id: params[:added_member]).where('name LIKE(?)', "#{params[:keyword]}%")
+    end
   end
 
   def edit

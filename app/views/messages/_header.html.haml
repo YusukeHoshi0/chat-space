@@ -1,8 +1,8 @@
 .header__left-box
-  .header__left-box--group-name
+  .header__left-box--group-name{data: {group: {id: @group.id}}}
     = @group.name
   .header__left-box--members
     = "Member : #{@member}"
-= link_to edit_group_path(1) do
+= link_to edit_group_path(@group.id) do
   .header__btn--edit-group
     Edit
