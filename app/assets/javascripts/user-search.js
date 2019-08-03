@@ -16,9 +16,9 @@ $(function() {
   }
 
   function appendAddUserHTML(user_id, user_name) {
-    var html = `<div class='chat-group-user clearfix js-chat-member'              id='chat-group-user-${user_id}'>
+    var html = `<div class='chat-group-user clearfix                          js-chat-member' id='chat-group-user-${user_id}'>
                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
-                  <p class='chat-group-user__name'>${user_name}</p>
+                  <p class='chat-group-user__name add_member' data-user-id='${user_id}'>${user_name}</p>
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
               </div>`
     $("#chat-group-users").append(html);
@@ -27,10 +27,14 @@ $(function() {
   $("#user-search-field").on("keyup", function() {
     var input = $(this).val();
 
+    var added_memder = $('.add_member').map(function() {
+      return $(this).data('userId');
+    }).get();
+
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: {keyword: input},
+      data: {keyword: input, added_member: added_memder},
       dataType: 'json'
     })
     .done(function(users) {
