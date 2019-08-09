@@ -18,3 +18,5 @@
 
 # uploaded images
 public/uploads/*
+
+config/secrets.yml
